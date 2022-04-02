@@ -14,7 +14,9 @@ services:
 
   web:
 
-    build: .
+    build:
+      context: ../api_yamdb
+      dockerfile: Dockerfile
 
     restart: always
 
@@ -36,7 +38,7 @@ services:
       - "80:80"
 
     volumes:
-      - ./nginx/defauld.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
       - static_value:/var/html/static
       - media_value:/var/html/media
 
