@@ -11,11 +11,20 @@ ENV_DIR = os.path.abspath(os.path.join(os.path.join(
 
 load_dotenv(ENV_DIR)
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.getenv(
+    'SECRET_KEY',
+    default='p&l%385148kslhtyn^##a1)ier@4zqj=rq&agdol^##zgl9(vs'
+)
 
-DEBUG = os.getenv('DEBUG')
+DEBUG = os.getenv(
+    'DEBUG',
+    default=False
+)
 
-ALLOWED_HOSTS = os.getenv('SERVERNAMES').split(',')
+ALLOWED_HOSTS = os.getenv(
+    'SERVERNAMES',
+    default='localhost,127.0.0.1,[::1],*'
+).split(',')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -65,12 +74,14 @@ WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DB_ENGINE'),
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('POSTGRES_USER'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT')
+        'ENGINE': os.getenv(
+            'DB_ENGINE', default='django.db.backends.postgresql'
+        ),
+        'NAME': os.getenv('DB_NAME', default='postgres'),
+        'USER': os.getenv('POSTGRES_USER', default='postgres'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', default='postgres'),
+        'HOST': os.getenv('DB_HOST', default='db'),
+        'PORT': os.getenv('DB_PORT', default='5432')
     }
 }
 
