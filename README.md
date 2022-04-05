@@ -10,7 +10,7 @@
 
 ### <a name="tech">Используемые технологии</a>
 
-Python 3.7 :snake:, Django 2.2.19 :desktop_computer:, Django Rest Framework	3.12.4 :arrows_counterclockwise:, Docker 3.8 :ship:
+Python 3.7 :snake:, Django 2.2.19 :desktop_computer:, Django Rest Framework	3.12.4 :arrows_counterclockwise:, Docker 3.8 :ship:, Nginx :paintbrush:, Postgres :books:
 <hr>
 
 ### <a name="about-project">Проект YaMDb собирает отзывы пользователей на различные произведения</a>
